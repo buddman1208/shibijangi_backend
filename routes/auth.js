@@ -1,7 +1,7 @@
 var express = require('express');
 
 module.exports = init;
-function init(app, db){
+function init(db){
 
     var router = express.Router();
     var params = ['id', 'password']
