@@ -5,11 +5,12 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var db = require('./mongo/index')
 
 var app = express();
 
 var index = require('./routes/index');
-var auth = require('./routes/auth');
+var auth = require('./routes/auth')(app, db);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
